@@ -17,9 +17,10 @@ describe('generateLocationMessage', () => {
     let from = 'Admin';
     let lat = 123;
     let long = 456;
+    let url = 'https://www.google.com/maps?q=';
     let coords = generateLocationMessage(from, lat, long);
     expect(coords.from).toBe(from);
-    expect(coords.url).toBe(`https://www.google.com/maps?q=${lat},${long}`);
+    expect(coords.url).toBe(`${url}${lat},${long}`);
     expect(typeof coords.createdAt).toBe('number')
   });
 });
